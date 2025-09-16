@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Smart Gadget</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#64748b',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full top-0 z-10">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-primary">SmartGadget</div>
+            <a href="#pricing" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">지금 구매</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-24 bg-white">
+        <div class="container mx-auto px-6 py-16 text-center">
+            <h1 class="text-5xl font-extrabold text-gray-900 leading-tight">
+                미래를 여는 AI 스마트 가젯
+            </h1>
+            <p class="mt-4 text-lg text-secondary max-w-2xl mx-auto">
+                당신의 일상을 더 스마트하고 효율적으로 만들어 줄 혁신적인 AI 기술을 경험해보세요.
+            </p>
+            <div class="mt-8">
+                <img src="https://plus.unsplash.com/premium_photo-1678565869434-c81195861939?q=80&w=2070&auto=format&fit=crop" alt="Smart Gadget" class="rounded-lg shadow-2xl mx-auto max-w-4xl">
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">주요 기능</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="text-4xl text-primary mb-4">🚀</div>
+                    <h3 class="text-2xl font-bold mb-2">실시간 번역</h3>
+                    <p class="text-secondary">전 세계 누구와도 언어 장벽 없이 소통하세요. 50개 이상의 언어를 실시간으로 번역합니다.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="text-4xl text-primary mb-4">💡</div>
+                    <h3 class="text-2xl font-bold mb-2">개인 맞춤 비서</h3>
+                    <p class="text-secondary">당신의 스케줄, 건강, 관심사를 학습하여 최고의 하루를 보낼 수 있도록 돕습니다.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="text-4xl text-primary mb-4">🔒</div>
+                    <h3 class="text-2xl font-bold mb-2">강력한 보안</h3>
+                    <p class="text-secondary">최첨단 암호화 기술로 당신의 모든 데이터를 안전하게 보호합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">사용자 후기</h2>
+            <div class="flex flex-wrap -mx-4">
+                <div class="w-full md:w-1/2 px-4 mb-8">
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <p class="text-secondary mb-4">"이 제품을 사용하고 나서 해외 출장이 훨씬 편해졌어요. 언어 걱정이 없으니 비즈니스에만 집중할 수 있습니다."</p>
+                        <p class="font-bold text-gray-900">- 박서준, CEO</p>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 px-4 mb-8">
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <p class="text-secondary mb-4">"매일 아침 브리핑을 해주는 개인 비서 기능이 정말 마음에 들어요. 하루를 계획적으로 시작할 수 있게 되었어요."</p>
+                        <p class="font-bold text-gray-900">- 김지우, 프리랜서</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-md mx-auto bg-white rounded-lg shadow-2xl overflow-hidden">
+                <div class="p-8">
+                    <h3 class="text-3xl font-bold text-center text-gray-900">Special Offer</h3>
+                    <p class="text-center text-secondary mt-2">출시 기념 특별가</p>
+                    <div class="text-center text-5xl font-extrabold text-gray-900 my-6">
+                        ₩299,000
+                        <span class="text-xl font-medium text-secondary line-through">₩399,000</span>
+                    </div>
+                    <ul class="text-secondary space-y-2">
+                        <li class="flex items-center"><span class="text-primary mr-2">✔</span> AI 스마트 가젯 본체</li>
+                        <li class="flex items-center"><span class="text-primary mr-2">✔</span> 무선 충전 크래들</li>
+                        <li class="flex items-center"><span class="text-primary mr-2">✔</span> 1년 무상 보증</li>
+                    </ul>
+                </div>
+                <div class="px-8 pb-8">
+                    <a href="#" class="block w-full bg-primary text-white text-center py-4 rounded-lg text-xl font-bold hover:bg-blue-600 transition">지금 바로 구매하기</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 SmartGadget Inc. All rights reserved.</p>
+            <div class="flex justify-center space-x-4 mt-4">
+                <a href="#" class="hover:text-primary">Facebook</a>
+                <a href="#" class="hover:text-primary">Twitter</a>
+                <a href="#" class="hover:text-primary">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
