@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini Travel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    <style>
+        .carousel-item img {
+            height: 450px;
+            object-fit: cover;
+        }
+        .section {
+            padding: 60px 0;
+        }
+        .bg-light-gray {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="#">Gemini Travel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#">항공권</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">호텔</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">렌터카</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">여행자보험</a></li>
+                </ul>
+                <form class="d-flex me-2">
+                    <input class="form-control me-2" type="search" placeholder="여행지 검색" aria-label="Search">
+                    <button class="btn btn-outline-primary" type="submit">검색</button>
+                </form>
+                <div class="d-flex">
+                    <button class="btn btn-link text-decoration-none">로그인</button>
+                    <button class="btn btn-primary">회원가입</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Carousel -->
+    <header id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" style="margin-top: 56px;">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723a9ce6890?q=80&w=2070&auto=format&fit=crop" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>환상의 섬, 몰디브</h5>
+                    <p>지상 최고의 낙원에서 잊지 못할 휴가를 보내세요.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1485081669829-7b468a9c12b9?q=80&w=2070&auto=format&fit=crop" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>예술의 도시, 파리</h5>
+                    <p>낭만과 예술이 살아숨쉬는 파리로 여러분을 초대합니다.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?q=80&w=2070&auto=format&fit=crop" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>활기찬 도시, 도쿄</h5>
+                    <p>전통과 현대가 공존하는 매력적인 도시를 탐험하세요.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </header>
+
+    <!-- Search Form Section -->
+    <section class="section">
+        <div class="container">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="flight-tab" data-bs-toggle="tab" data-bs-target="#flight" type="button" role="tab" aria-controls="flight" aria-selected="true"><i class="fa-solid fa-plane-departure"></i> 항공권</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="hotel-tab" data-bs-toggle="tab" data-bs-target="#hotel" type="button" role="tab" aria-controls="hotel" aria-selected="false"><i class="fa-solid fa-hotel"></i> 호텔</button>
+                </li>
+            </ul>
+            <div class="tab-content p-4 border border-top-0" id="myTabContent">
+                <div class="tab-pane fade show active" id="flight" role="tabpanel" aria-labelledby="flight-tab">
+                    <form class="row g-3 align-items-center">
+                        <div class="col-md"><input type="text" class="form-control" placeholder="출발지"></div>
+                        <div class="col-md"><input type="text" class="form-control" placeholder="도착지"></div>
+                        <div class="col-md"><input type="date" class="form-control"></div>
+                        <div class="col-md"><input type="date" class="form-control"></div>
+                        <div class="col-md-auto"><button type="submit" class="btn btn-primary w-100">검색</button></div>
+                    </form>
+                </div>
+                <div class="tab-pane fade" id="hotel" role="tabpanel" aria-labelledby="hotel-tab">
+                    <form class="row g-3 align-items-center">
+                        <div class="col-md"><input type="text" class="form-control" placeholder="도시 또는 호텔명"></div>
+                        <div class="col-md"><input type="date" class="form-control" placeholder="체크인"></div>
+                        <div class="col-md"><input type="date" class="form-control" placeholder="체크아웃"></div>
+                        <div class="col-md"><input type="number" class="form-control" placeholder="인원"></div>
+                        <div class="col-md-auto"><button type="submit" class="btn btn-primary w-100">검색</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recommended Destinations -->
+    <section class="section bg-light-gray">
+        <div class="container">
+            <h2 class="text-center mb-5">추천 여행지</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1518684079-3c830dce5020?q=80&w=1974&auto=format&fit=crop" class="card-img-top" alt="두바이">
+                        <div class="card-body">
+                            <h5 class="card-title">두바이</h5>
+                            <p class="card-text">사막과 미래가 공존하는 도시, 두바이에서 특별한 경험을 해보세요.</p>
+                            <a href="#" class="btn btn-outline-primary">더 알아보기</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=1776&auto=format&fit=crop" class="card-img-top" alt="인도">
+                        <div class="card-body">
+                            <h5 class="card-title">인도</h5>
+                            <p class="card-text">신비로운 문화와 역사가 가득한 인도로 떠나는 영적인 여행.</p>
+                            <a href="#" class="btn btn-outline-primary">더 알아보기</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?q=80&w=1966&auto=format&fit=crop" class="card-img-top" alt="이탈리아">
+                        <div class="card-body">
+                            <h5 class="card-title">이탈리아</h5>
+                            <p class="card-text">맛과 멋의 나라, 이탈리아에서 잊지 못할 추억을 만드세요.</p>
+                            <a href="#" class="btn btn-outline-primary">더 알아보기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promotions -->
+    <section class="section">
+        <div class="container">
+            <h2 class="text-center mb-5">진행중인 프로모션</h2>
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            여름맞이 조기예약 할인!
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <strong>지금 예약하고 최대 20% 할인 받으세요!</strong> 90일 전 예약 시 적용되는 특별 할인 혜택을 놓치지 마세요. 자세한 내용은 이벤트 페이지를 참고해주세요.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            신규 가입 회원 특별 쿠폰팩 증정
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Gemini Travel에 새로 가입하신 모든 분들께 <strong>총 10만원 상당의 쿠폰팩</strong>을 즉시 지급해드립니다. 지금 바로 가입하고 혜택을 누리세요.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section bg-light-gray">
+        <div class="container">
+            <h2 class="text-center mb-5">고객 후기</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <figure class="p-4 bg-white rounded">
+                        <blockquote class="blockquote">
+                            <p>덕분에 정말 편안하고 즐거운 가족 여행이었습니다. 다음에도 꼭 이용할게요!</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer">
+                            김OO <cite title="Source Title">가족 여행</cite>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <figure class="p-4 bg-white rounded">
+                        <blockquote class="blockquote">
+                            <p>항공권부터 숙소까지 한번에 해결할 수 있어서 너무 편리했어요. 강력 추천합니다.</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer">
+                            박XX <cite title="Source Title">자유 여행</cite>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>Gemini Travel</h5>
+                    <p class="small text-muted">최고의 여행 파트너</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>사이트맵</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none">회사소개</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">이용약관</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">개인정보처리방침</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>고객센터</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none">공지사항</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">자주묻는질문</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">1:1 문의</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Follow Us</h5>
+                    <a href="#" class="text-white me-2 fs-4"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-white me-2 fs-4"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white fs-4"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <hr class="my-4">
+            <p class="text-center text-muted small">&copy; 2025 Gemini Travel. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
